@@ -1,0 +1,102 @@
+﻿@page
+@model ST24.Pages.Admin.GalleryModel
+@{
+    ViewData["Title"] = "Add Gallery";
+}
+
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>New Gallery</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/admin/dash-board">Home</a></li>
+                <li>Gallery</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+<!-- contact-style-two -->
+<section class="contact-style-two">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-8 col-md-12 col-sm-12 form-column">
+                <div class="content_block_6">
+                    <div class="content-box">
+                        <div class="sec-title">
+                            <p>New Gallery</p>
+                            <h2>Create New Gallery</h2>
+                            <img src="/assets/images/icons/icon-1.png" alt="">
+                        </div>
+                        <form method="post" id="create-account-form" class="default-form" novalidate="novalidate">
+                            <div class="row clearfix">
+                                 
+                                <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                                    <h5><label><input id='attach_gal' type='file' style='display:none' /><i class='fa fa-upload' style='cursor:pointer'>Click To Add Gallery</i></label></h5>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
+                                    <img src="/assets/images/gifs/loader_1.gif" id="action_loading" class="hidden" height="280" width="260" />
+                                    <button class="theme-btn style-one" type="button" id="btn_create_item" name="btn_create_gallery">Add Gallery</button>
+                                    <span class="error-image error-section" id="error-message">
+
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                <div class="blog-sidebar">
+                    <div class="sidebar-widget category-widget">
+                        <div class="widget-title">
+                            <h4>Links</h4>
+                        </div>
+                        <div class="widget-content">
+                            <ul class="category-list clearfix">
+                                <li><a href="/admin/dash-board">Dashboard</a></li>
+                                <li><a href="/admin/create">Create New Agent</a></li>
+                                <li><a href="/admin">View Requests</a></li>
+                                <li><a href="/admin/collections">View Collections</a></li>
+                                <li><a href="/admin/additems">Add Items</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="gallery-page-section">
+    <div class="auto-container">
+        <div class="row clearfix" id="gal_section">
+
+        </div>
+    </div>
+</section>
+            <!-- contact-style-two end -->
+
+            <style type="text/css">
+                .text-error {
+                    color: red;
+                }
+
+                .hidden {
+                    display: none;
+                }
+            </style>
+
+            <script type="text/javascript" src="/assets/st24js/AdminScript.js"></script>
+
+            <script type="text/javascript">
+                if (localStorage.getItem("login_id") == null) {
+                    //location.href = "/";
+                }
+            </script>
+
+

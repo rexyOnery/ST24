@@ -1,0 +1,68 @@
+﻿@page
+@model ST24.Pages.Admin.QuickRequestModel
+@{
+}
+
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>Quick Requests</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/admin/dash-board">Home</a></li>
+                <li>Quick Requests</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+<!-- contact-style-two -->
+<section class="sidebar-page-container">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                <div class="blog-details-content">
+
+                    <div class="comment-box">
+                        <div class="group-title">
+                            <h3 id="request_count"></h3>
+                        </div>
+                        <div id="new_customer"></div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                <div class="blog-sidebar">
+                    <div class="sidebar-widget category-widget">
+                        <div class="widget-title">
+                            <h4>Links</h4>
+                        </div>
+                        <div class="widget-content">
+                            <ul class="category-list clearfix">
+                                <li><a href="/admin/dash-board">Dashboard</a></li>
+                                <li><a href="/admin/create">Create New Agent</a></li>
+                                <li><a href="/admin">View Requests</a></li>
+                                <li><a href="/admin/collections">View Collections</a></li>
+                                <li><a href="/admin/additems">Add Items</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact-style-two end -->
+<div id="customers_without_agent"></div>
+<script type="text/javascript" src="/assets/st24js/CustomerScript.js"></script>
+
+<script type="text/javascript">
+    if (localStorage.getItem("login_id") == null) {
+        location.href = "/";
+    }
+</script>

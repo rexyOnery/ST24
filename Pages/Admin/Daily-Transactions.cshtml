@@ -1,0 +1,55 @@
+﻿@page
+@model ST24.Pages.Admin.Daily_TransactionsModel
+@{
+}
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>Current Transaction</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/admin/dash-board">Home</a></li>
+                <li>Current Transaction</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+<!-- pricing-section -->
+<section class="pricing-section">
+    <div class="map-layer" style="background-image: url(/assets/images/shape/map-1.png);"></div>
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>CURRENT TRANSACTION FOR</p>
+            <h2 id="agent_name"></h2>
+            <img src="/assets/images/icons/icon-1.png" alt="">
+        </div>
+        <div class="pricing-inner centred">
+           
+            <div class="row clearfix" id="current_client">
+                <div class='row clearfix' id="loading">
+                    Loading... Daily Transaction
+                </div>
+            </div>
+        </div>
+        <div class="cta-section bg-color-2 hidden" id="msg">
+            <div class="inner-box clearfix"> 
+                <div class="text pull-left">
+                    <h2>The Agent currently has no transaction</h2>
+                </div> 
+            </div>
+        </div>
+    </div>
+</section>
+<!-- pricing-section end -->
+<div id="get_all_current_client"></div>
+
+<style>
+    .hidden{
+        display:none
+    }
+</style>
+
+<script type="text/javascript" src="~/assets/st24js/AdminScript.js"></script>

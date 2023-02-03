@@ -1,0 +1,131 @@
+﻿@page
+@model ST24.Pages.Admin.DailySalesModel
+@{
+    ViewData["Title"] = "Daily Sales";
+}
+
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>Daily Sales</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/admin/dash-board">Home</a></li>
+                <li>Daily Sales</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+<section class="pricing-section">
+    <div class="map-layer" style="background-image: url(/assets/images/shape/map-1.png);"></div>
+    <div class="auto-container">
+        <div class=" centred col-lg-12 col-md-12 col-sm-12 form-column">
+            <form id="contact-form" class="default-form" novalidate="novalidate">
+                <input type="date" id="daily_sales" required="" aria-required="true" />
+                <a class="theme-btn style-one" id="btn_Status" href="javascript: getDailySales();" name="submit-form">Get Sales</a>
+            </form>
+        </div>
+        <div class="sec-title centred hidden" id="top_sales">
+
+            <p>Steezz Daily Transaction - <span id="history_daily"></span></p>
+            <h2>Grand Total: <span id="grand_total"></span></h2>
+            <img src="/assets/images/icons/icon-1.png" alt="">
+        </div>
+        <div class="pricing-inner centred hidden" id="display_sales">
+            <h2 id="loading"><span>Loading... Daily Transaction</span> </h2>
+            <div class="row clearfix" id="week_1">
+                <div class='col-lg-3 col-md-6 col-sm-12 pricing-block' id="loading">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- contact-style-two -->
+<!-- contact-style-two end -->
+<div id="daily_transaction_history"></div>
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+<script type="text/javascript" src="/assets/st24js/AdminScript.js"></script>
+
+<script type="text/javascript">
+    if (localStorage.getItem("login_id") == null) {
+        location.href = "/";
+    }
+
+    var getDailySales = () => {
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        if ($("#daily_sales").val() == "") {
+            return false;
+        }
+        var month_number = $("#daily_sales").val();
+
+        var raw = JSON.stringify({
+            "Day": month_number
+        });
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        $("#display_sales").removeClass("hidden");
+        $("#top_sales").addClass("hidden");
+        $("#loading").removeClass('hidden');
+        $("#btn_Status").addClass("hidden");
+        $("#week_1").addClass('hidden');
+        fetch("http://services.steezz24.com/items/dailysales/", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                console.log(result);
+                var htm = "";
+                var g_total = 0;
+                result.forEach(item => {
+                    if (item.customerName != "") {
+                        htm += "<div class='col-lg-3 col-md-6 col-sm-12 pricing-block'>"
+                        htm += "<div class='pricing-block-one wow fadeInUp animated animated' data-wow-delay='00ms' data-wow-duration='1500ms'>"
+                        htm += "  <div class='icon-box'><i class='flaticon-save-money'></i></div>"
+                        htm += "    <div class='inner-box'>"
+                        htm += "        <span>" + item.customerName + "</span>"
+                        htm += "        <h3>&#8358;" + formatMoney(parseInt(item.total)) + "</h3>"
+                        htm += "        <div class='link'><a href='/admin/customersinday?day=" + month_number + "&id=" + item.id + "'><i class='fas fa-angle-right'></i></a></div>"
+                        htm += "        <div class='light-icon'><i class='flaticon-save-money'></i></div>"
+                        htm += "    </div>"
+                        htm += "</div>"
+                        htm += "</div > "
+                        g_total += parseInt(item.total);
+                    }
+                });
+                $("#top_sales").removeClass("hidden");
+                $("#week_1").html(htm);
+                $("#btn_Status").removeClass("hidden");
+                $("#grand_total").html("&#8358;" + formatMoney(g_total));
+                $("#week_1").removeClass('hidden');
+                $("#loading").addClass('hidden');
+            })
+            .catch(error => {
+                console.log(error);
+                $("#loading").addClass('hidden');
+                $("#btn_Status").removeClass("hidden");
+                $("#not_okay").removeClass('hidden');
+            });
+
+    }
+
+
+    var formatMoney = (number, decPlaces, decSep, thouSep) => {
+        return number.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+    }
+</script>

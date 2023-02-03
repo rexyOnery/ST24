@@ -1,0 +1,54 @@
+﻿@page
+@model ST24.Pages.Admin.AgentsModel
+@{
+    ViewData["Title"] = "All Agent";
+}
+
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>Steezz Agents</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/admin/dash-board">Home</a></li>
+                <li>Agents</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+<!-- team-section -->
+<section class="team-section sec-pad">
+    <div class="auto-container">
+        <div class="row clearfix" id="view_all_agent">
+            <div class="sec-title centred">
+                <h2><span>Loading...</span> All Agents</h2>
+            </div>
+        </div>
+        @*<input type="file" id="image-input" accept="image/*">
+        <img id="preview" />*@
+    </div>
+</section>
+<!-- team-section end -->
+<div id="get_all_agent"></div>
+
+
+<style type="text/css">
+    .text-error {
+        color: red;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+
+<script type="text/javascript" src="/assets/st24js/AdminScript.js"></script>
+
+<script type="text/javascript">
+    if (localStorage.getItem("login_id") == null) {
+        location.href = "/";
+    }
+</script>

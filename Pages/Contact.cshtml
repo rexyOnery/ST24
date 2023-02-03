@@ -1,0 +1,135 @@
+﻿@page
+@model ST24.Pages.ContactModel
+@{
+    ViewData["Title"] = "Contact";
+}
+
+
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>Contact</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/">Home</a></li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+<!-- contact-style-two -->
+<section class="contact-style-two">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-8 col-md-12 col-sm-12 form-column">
+                <div class="content_block_6">
+                    <div class="content-box">
+                        <div class="sec-title">
+                            <p>Contact With Us</p>
+                            <h2>Write A Message</h2>
+                            <img src="assets/images/icons/icon-1.png" alt="">
+                        </div>
+                        <form method="post" action="sendemail.php" id="contact-form" class="default-form" novalidate="novalidate">
+                            <div class="row clearfix">
+                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="text" id="username" placeholder="Full Name" required="" aria-required="true">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="email" id="email" placeholder="Email Address" required="" aria-required="true">
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                                    <input type="text" id="phone" required="" placeholder="Phone Number" aria-required="true">
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                                    <input type="text" id="subject" required="" placeholder="Subject" aria-required="true">
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                    <textarea id="message" placeholder="Write Message"></textarea>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
+                                    <div id="msg"></div>
+                                    <img src="~/assets/images/gifs/loader_1.gif" class="hidden" id="loader" width="300" height="280" />
+                                    <button class="theme-btn style-one" id="btn_contact" type="button" name="submit-form">Send message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 info-column">
+                <div class="info-inner">
+                    <ul class="info-list clearfix">
+                        <li>
+                            <i class="flaticon-telephone"></i>
+                            <p>Call Us</p>
+                            <h6><a href="tel:2348167877465">0816 787 7465</a></h6>
+                        </li>
+                        <li>
+                            <i class="flaticon-email"></i>
+                            <p>Send Email</p>
+                            <h6><a href="mailto:needhelp@steezz24.com">needhelp@steezz24.com</a></h6>
+                        </li>
+                        <li>
+                            <i class="flaticon-clock"></i>
+                            <p>Working Hours</p>
+                            <h6>Mon/Sat 9:00am to 7:00pm</h6>
+                        </li>
+                        <li>
+                            <i class="flaticon-pin"></i>
+                            <p>Visit Now</p>
+                            <h6>Head Office: Katampe, Kubwa</h6>
+                        </li>
+                    </ul>
+                    <div class="btn-box"><a href="/placeorder" class="theme-btn style-one">Order service now</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact-style-two end -->
+<!-- google-map-section -->
+<section class="google-map-section">
+    <div class="map-inner">
+        <div class="mapouter">
+        <div class="gmap_canvas"><iframe width="100%" height="550" id="gmap_canvas" src="https://maps.google.com/maps?q=583F+6J7,%20Katampe%20junction,%20Kubwa,%20Abuja,%20Nigeria&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies-online.net"></a><br>
+        <style>
+            .mapouter {
+                position: relative;
+                text-align: right; 
+                width: 100%;
+                height: 550px;
+            }
+        </style> 
+        <style>
+            .gmap_canvas {
+                overflow: hidden;
+                background: none !important; 
+                width: 100%;
+                height: 550px;
+            }
+        </style></div></div>
+
+        @*<div class="google-map"
+             id="contact-google-map"
+             data-map-lat="6.520832"
+             data-map-lng="-3.371827"
+             data-icon-path="assets/images/icons/map-marker.png"
+             data-map-title="Kubwa, Abuja, Nigeria"
+             data-map-zoom="12"
+             data-markers='{
+             "marker-1" : [6.520832, 3.371827, "<h4>Branch Office</h4><p>77/99 New York</p>" ,"assets /images/icons/map-marker.png"]
+             }'>
+
+        </div>*@
+    </div>
+</section>
+<!-- google-map-section end -->
+<style type="text/css">
+    .hidden{
+        display:none;
+    }
+</style>
+<script type="text/javascript" src="~/assets/st24js/ServiceScript.js"></script>

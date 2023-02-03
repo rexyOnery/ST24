@@ -1,0 +1,133 @@
+﻿@page
+@model ST24.Pages.Agent.DashboardModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1 id="agent_name">Dashboard</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li>Dashboard</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title --> 
+<!-- chooseus-section -->
+<section class="chooseus-section bg-color-3">
+    <div class="pattern-layer" style="background-image: url(/assets/images/shape/shape-3.png);"></div>
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-6 col-md-12 col-sm-12 left-column">
+                <div class="content_block_2">
+                    <div class="content-box">
+                        <div class="sec-title">
+                            <h2>Laundry Dashboard</h2>
+                            <img src="/assets/images/icons/icon-1.png" alt="">
+                        </div>
+                        <div class="inner-box clearfix">
+                            <figure class="star-icon"><img src="/assets/images/icons/star-1.png" alt=""></figure>
+                            <div class="single-item">
+                                <a href="/agent">
+                                    <div class="inner">
+                                        <div class="icon-box"><i class="flaticon-save-money"></i></div>
+                                        <h4>Add Customers</h4>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="single-item">
+                                <a href="/agent/customers">
+                                    <div class="inner">
+                                        <div class="icon-box"><i class="flaticon-laundry-1"></i></div>
+                                        <h4>View Customers</h4>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="single-item">
+                                <a href="/agent/assigned-customers">
+                                    <div class="inner">
+                                        <div class="icon-box"><i class="flaticon-washing"></i></div>
+                                        <h4>Assigned Customers</h4>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="single-item">
+                                <a href="/agent/awaiting-delivery">
+                                    <div class="inner">
+                                        <div class="icon-box"><i class="flaticon-delivery"></i></div>
+                                        <h4><span id="agent_dash_awaiting_delivery_count"></span> Awaiting Delivery</h4>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="inner-box clearfix">
+                            <figure class="star-icon"><img src="/assets/images/icons/star-1.png" alt=""></figure>
+                            <div class="single-item">
+                                <a href="/quickorder">
+                                    <div class="inner">
+                                        <div class="icon-box"><i class="flaticon-email"></i></div>
+                                        <h4>Customer Quick Order</h4>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="single-item">
+                                <a href="/agent/mycommission">
+                                    <div class="inner">
+                                        <div class="icon-box"><i class="flaticon-email"></i></div>
+                                        <h4>My Commission</h4>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="single-item">
+                                <a href="/agent/process">
+                                    <div class="inner">
+                                        <div class="icon-box"><i class="flaticon-laundry"></i></div>
+                                        <h4>Customer Status</h4>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="single-item">
+                                <a href="/agent/dailysales">
+                                    <div class="inner">
+                                        <div class="icon-box"><i class="fa fa-piggy-bank"></i></div>
+                                        <h4>View <br />Daily Sales</h4>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 right-column">
+                <div class="content_block_3">
+                    <div class="content-box">
+                        <div class="text">
+                            <p></p>
+                        </div>
+                        <div class="image-box">
+                            <figure class="image"><img src="/assets/images/resource/chooseus-1.jpg" alt=""></figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- chooseus-section end -->
+<!-- process-section end -->
+<div id="agent_dash_call"></div>
+<script type="text/javascript" src="/assets/st24js/AgentScript.js"></script>
+
+<script type="text/javascript">
+
+    $("#agent_name").html(localStorage.getItem("users_name"));
+    if (localStorage.getItem("login_id") == null) {
+        location.href = "/";
+
+    }
+</script>

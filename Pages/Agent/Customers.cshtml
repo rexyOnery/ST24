@@ -1,0 +1,72 @@
+﻿@page
+@model ST24.Pages.Agent.CustomersModel
+@{
+    ViewData["Title"] = "Customers";
+}
+
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>My Customers</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/Agent/dashboard">Home</a></li>
+                <li>Customers</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+<!-- contact-style-two -->
+<section class="sidebar-page-container">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                <div class="blog-details-content">
+
+                    <div class="comment-box">
+                        <div class="group-title">
+                            <h3 id="request_count"></h3>
+                        </div>
+                        <div id="my_customer">
+                            <div class="sec-title centred">
+                                <h2><span>Loading...</span></h2>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                <div class="blog-sidebar">
+                    <div class="sidebar-widget category-widget">
+                        <div class="widget-title">
+                            <h4>Links</h4>
+                        </div>
+                        <div class="widget-content">
+                            <ul class="category-list clearfix">
+                                <li><a href="/agent/dashboard">Dashboard</a></li>
+                                <li><a href="/agent">Add New/Search Customer</a></li>
+                                <li><a href="/agent/customers">View Customers</a></li>
+                                <li><a href="/agent/awaiting-delivery">Awaiting Delivery</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact-style-two end -->
+<div id="my_customers"></div>
+<script type="text/javascript" src="/assets/st24js/AgentScript.js"></script>
+
+<script type="text/javascript">
+    if (localStorage.getItem("login_id") == null) {
+        location.href = "/";
+    }
+</script>

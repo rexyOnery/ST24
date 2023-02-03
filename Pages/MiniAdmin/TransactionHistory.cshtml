@@ -1,0 +1,198 @@
+﻿@page
+@model ST24.Pages.MiniAdmin.TransactionHistoryModel
+@{
+    ViewData["Title"] = "Transaction History";
+}
+
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>Transaction History</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/admin/dash-board">Home</a></li>
+                <li>Transaction History</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+<section class="pricing-section">
+    <div class="map-layer" style="background-image: url(/assets/images/shape/map-1.png);"></div>
+    <div class="auto-container">
+        <div class="sec-title centred">
+
+            <p>Steezz Transaction History - @DateTime.Now.Year</p>
+            <h2>Grand Total: <span id="grand_total"></span></h2>
+            <img src="/assets/images/icons/icon-1.png" alt="">
+        </div>
+        <div class="pricing-inner centred">
+            <div class="row clearfix">
+                <div class='col-lg-3 col-md-6 col-sm-12 pricing-block' id="loading">
+                    Loading... Transactions for year @DateTime.Now.Year
+                </div>
+                <div class='col-lg-3 col-md-6 col-sm-12 pricing-block hidden' id="jan">
+                    <div class='pricing-block-one wow fadeInUp animated animated' data-wow-delay='00ms' data-wow-duration='1500ms'>
+                        <div class='icon-box'><i class='flaticon-save-money'></i></div>
+                        <div class='inner-box'>
+                            <span>January Income</span>
+                            <h3 id="jan_total"></h3>
+                            <div class='link'><a href='/admin/monthly-history/?id=1'><i class='fas fa-angle-right'></i></a></div>
+                            <div class='light-icon'><i class='flaticon-save-money'></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='col-lg-3 col-md-6 col-sm-12 pricing-block hidden' id="feb">
+                    <div class='pricing-block-one wow fadeInUp animated animated' data-wow-delay='00ms' data-wow-duration='1500ms'>
+                        <div class='icon-box'><i class='flaticon-save-money'></i></div>
+                        <div class='inner-box'>
+                            <span>February Income</span>
+                            <h3 id="feb_total"></h3>
+                            <div class='link'><a href='/admin/monthly-history/?id=2'><i class='fas fa-angle-right'></i></a></div>
+                            <div class='light-icon'><i class='flaticon-save-money'></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='col-lg-3 col-md-6 col-sm-12 pricing-block hidden' id="mar">
+                    <div class='pricing-block-one wow fadeInUp animated animated' data-wow-delay='00ms' data-wow-duration='1500ms'>
+                        <div class='icon-box'><i class='flaticon-save-money'></i></div>
+                        <div class='inner-box'>
+                            <span>March Income</span>
+                            <h3 id="mar_total"></h3>
+                            <div class='link'><a href='/admin/monthly-history/?id=3'><i class='fas fa-angle-right'></i></a></div>
+                            <div class='light-icon'><i class='flaticon-save-money'></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='col-lg-3 col-md-6 col-sm-12 pricing-block hidden' id="apr">
+                    <div class='pricing-block-one wow fadeInUp animated animated' data-wow-delay='00ms' data-wow-duration='1500ms'>
+                        <div class='icon-box'><i class='flaticon-save-money'></i></div>
+                        <div class='inner-box'>
+                            <span>April Income</span>
+                            <h3 id="apr_total"></h3>
+                            <div class='link'><a href='/admin/monthly-history/?id=4'><i class='fas fa-angle-right'></i></a></div>
+                            <div class='light-icon'><i class='flaticon-save-money'></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='col-lg-3 col-md-6 col-sm-12 pricing-block hidden' id="may">
+                    <div class='pricing-block-one wow fadeInUp animated animated' data-wow-delay='00ms' data-wow-duration='1500ms'>
+                        <div class='icon-box'><i class='flaticon-save-money'></i></div>
+                        <div class='inner-box'>
+                            <span>May Income</span>
+                            <h3 id="may_total"></h3>
+                            <div class='link'><a href='/admin/monthly-history/?id=5'><i class='fas fa-angle-right'></i></a></div>
+                            <div class='light-icon'><i class='flaticon-save-money'></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='col-lg-3 col-md-6 col-sm-12 pricing-block hidden' id="jun">
+                    <div class='pricing-block-one wow fadeInUp animated animated' data-wow-delay='00ms' data-wow-duration='1500ms'>
+                        <div class='icon-box'><i class='flaticon-save-money'></i></div>
+                        <div class='inner-box'>
+                            <span>June Income</span>
+                            <h3 id="jun_total"></h3>
+                            <div class='link'><a href='/admin/monthly-history/?id=6'><i class='fas fa-angle-right'></i></a></div>
+                            <div class='light-icon'><i class='flaticon-save-money'></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='col-lg-3 col-md-6 col-sm-12 pricing-block hidden' id="jul">
+                    <div class='pricing-block-one wow fadeInUp animated animated' data-wow-delay='00ms' data-wow-duration='1500ms'>
+                        <div class='icon-box'><i class='flaticon-save-money'></i></div>
+                        <div class='inner-box'>
+                            <span>July Income</span>
+                            <h3 id="jul_total"></h3>
+                            <div class='link'><a href='/admin/monthly-history/?id=7'><i class='fas fa-angle-right'></i></a></div>
+                            <div class='light-icon'><i class='flaticon-save-money'></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='col-lg-3 col-md-6 col-sm-12 pricing-block hidden' id="aug">
+                    <div class='pricing-block-one wow fadeInUp animated animated' data-wow-delay='00ms' data-wow-duration='1500ms'>
+                        <div class='icon-box'><i class='flaticon-save-money'></i></div>
+                        <div class='inner-box'>
+                            <span>August Income</span>
+                            <h3 id="aug_total"></h3>
+                            <div class='link'><a href='/admin/monthly-history/?id=8'><i class='fas fa-angle-right'></i></a></div>
+                            <div class='light-icon'><i class='flaticon-save-money'></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='col-lg-3 col-md-6 col-sm-12 pricing-block hidden' id="sep">
+                    <div class='pricing-block-one wow fadeInUp animated animated' data-wow-delay='00ms' data-wow-duration='1500ms'>
+                        <div class='icon-box'><i class='flaticon-save-money'></i></div>
+                        <div class='inner-box'>
+                            <span>September Income</span>
+                            <h3 id="sep_total"></h3>
+                            <div class='link'><a href='/admin/monthly-history/?id=9'><i class='fas fa-angle-right'></i></a></div>
+                            <div class='light-icon'><i class='flaticon-save-money'></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='col-lg-3 col-md-6 col-sm-12 pricing-block hidden' id="oct">
+                    <div class='pricing-block-one wow fadeInUp animated animated' data-wow-delay='00ms' data-wow-duration='1500ms'>
+                        <div class='icon-box'><i class='flaticon-save-money'></i></div>
+                        <div class='inner-box'>
+                            <span>October Income</span>
+                            <h3 id="oct_total"></h3>
+                            <div class='link'><a href='/admin/monthly-history/?id=10'><i class='fas fa-angle-right'></i></a></div>
+                            <div class='light-icon'><i class='flaticon-save-money'></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='col-lg-3 col-md-6 col-sm-12 pricing-block hidden' id="nov">
+                    <div class='pricing-block-one wow fadeInUp animated animated' data-wow-delay='00ms' data-wow-duration='1500ms'>
+                        <div class='icon-box'><i class='flaticon-save-money'></i></div>
+                        <div class='inner-box'>
+                            <span>November Income</span>
+                            <h3 id="nov_total"></h3>
+                            <div class='link'><a href='/admin/monthly-history/?id=11'><i class='fas fa-angle-right'></i></a></div>
+                            <div class='light-icon'><i class='flaticon-save-money'></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='col-lg-3 col-md-6 col-sm-12 pricing-block hidden' id="dec">
+                    <div class='pricing-block-one wow fadeInUp animated animated' data-wow-delay='00ms' data-wow-duration='1500ms'>
+                        <div class='icon-box'><i class='flaticon-save-money'></i></div>
+                        <div class='inner-box'>
+                            <span>December Income</span>
+                            <h3 id="dec_total"></h3>
+                            <div class='link'><a href='/admin/monthly-history/?id=12'><i class='fas fa-angle-right'></i></a></div>
+                            <div class='light-icon'><i class='flaticon-save-money'></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- contact-style-two -->
+<!-- contact-style-two end -->
+<div id="transaction_history"></div>
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+<script type="text/javascript" src="/assets/st24js/AdminScript.js"></script>
+
+<script type="text/javascript">
+    if (localStorage.getItem("login_id") == null) {
+        //location.href = "/";
+    }
+</script>

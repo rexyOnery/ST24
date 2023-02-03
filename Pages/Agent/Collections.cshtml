@@ -1,0 +1,49 @@
+﻿@page
+@model ST24.Pages.Agent.CollectionsModel
+@{
+    ViewData["Title"] = "Collection";
+}
+
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>Laundry Service</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/Agent/dashboard">Home</a></li>
+                <li>Pick-Ups</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title --> 
+<!-- pricing-section -->
+<section class="pricing-section">
+    <div class="map-layer" style="background-image: url(/assets/images/shape/map-1.png);"></div>
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>Best Pricing Plans</p>
+            <h2>Affordable Prices</h2>
+            <img src="/assets/images/icons/icon-1.png" alt="">
+        </div>
+        <div class="pricing-inner centred">
+            <div class="row clearfix" id="item_collections">
+                <div class="sec-title centred">
+                    <h2><span>Loading...</span></h2>
+                </div>
+            </div>
+        </div>
+         
+    </div>
+</section>
+<div id="customers_without_agent"></div>
+<script type="text/javascript" src="/assets/st24js/AgentScript.js"></script>
+<script type="text/javascript" src="/assets/st24js/CartScript.js"></script>
+
+<script type="text/javascript">
+    if (localStorage.getItem("login_id") == null) {
+        location.href = "/";
+    }
+</script>

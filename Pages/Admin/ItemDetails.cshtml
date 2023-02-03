@@ -1,0 +1,115 @@
+﻿@page
+@model ST24.Pages.Admin.ItemDetailsModel
+@{ ViewData["Title"] = "Customer Items";
+}
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1 id="customer_name">Customer Items</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/admin/dash-board">Home</a></li>
+                <li>Customer Items</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+<!-- news-section -->
+<section class="news-section sec-pad">
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p id="customerName"></p>
+            <h2>List of Item(s) in Cart</h2>
+            <img src="/assets/images/icons/icon-1.png" alt="">
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-8 col-md-6 col-sm-12 news-block">
+                <div id="payment-failed">
+                    Uh-oh. Please try again, or contact support if you're encountering difficulties making payment.
+                </div>
+                <form>
+
+                    <div id="shopping_cart"></div>
+
+                    <div class="auto-container hidden" id="paid-button">
+                        <div class="inner-box clearfix">
+                            <div class="text pull-left">
+                                <div>Request Date: <span id="date"></span></div>
+                                <div style="margin-top:-20px">Phone: <span id="phone"></span></div>
+                                <div style="margin-top:-20px">Address: <span id="address"></span></div>
+                            </div>
+                            <div class="text pull-right">
+                                <h2><i class="fas fa-check-double"></i>PAID: &#8358;<span id="grand_total_paid">0.00</span></h2>
+                            </div>
+                        </div>
+                        <a href="javascript:printPage();" style="width:100%; margin-top:5px" class="theme-btn btn-success"><i class="fas fa-2x fa-print"></i> Print Receipt</a>
+                    </div>
+
+                </form>
+                <div id="payment-success">
+                    Thank you! Enjoy your awesome cruise.🚢
+                </div>
+                <div id="payment-pending">
+                    Verifying...Setting up your cruise🚢
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 sidebar-side">
+                <div class="blog-sidebar">
+                    <div class="sidebar-widget category-widget">
+                        <div class="widget-title">
+                            <h4>Links</h4>
+                        </div>
+                        <div class="widget-content">
+                            <ul class="category-list clearfix">
+                                <li><a href="/admin/dash-board">Dashboard</a></li>
+                                <li><a href="/admin/create">Create New Agent</a></li>
+                                <li><a href="/admin">View Requests</a></li>
+                                <li><a href="/admin/collections">View Collections</a></li>
+                                <li><a href="/admin/additems">Add Items</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+ 
+<!-- news-section end -->
+<div id="display_customer_cart_details"></div>
+
+<style type="text/css">
+    .hidden {
+        display: none;
+    }
+
+    #payment-success {
+        display: none;
+    }
+
+    #payment-pending {
+        display: none;
+    }
+
+    #payment-failed {
+        display: none;
+    }
+
+    #payment-button {
+        display: none;
+    }
+</style>
+<script type="text/javascript" src="/assets/st24js/AdminScript.js"></script>  
+
+<script type="text/javascript">
+    if (localStorage.getItem("login_id") == null) {
+        //location.href = "/";
+    }
+</script>
+

@@ -1,0 +1,71 @@
+﻿@page
+@model ST24.Pages.Agent.DailySalesModel
+@{
+    ViewData["Title"] = "Daily Sales"; 
+}
+
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>Daily Sales</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/agent/dashboard">Home</a></li>
+                <li>Daily Sales</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+<section class="pricing-section">
+    <div class="map-layer" style="background-image: url(/assets/images/shape/map-1.png);"></div>
+    <div class="auto-container">
+        <div class=" centred col-lg-12 col-md-12 col-sm-12 form-column">
+            <form id="contact-form" class="default-form" novalidate="novalidate">
+                <input type="date" id="daily_sales" required="" aria-required="true" />
+                <a class="theme-btn style-one" id="btn_Status" href="javascript: getDailySales();" name="submit-form">Get Sales</a>
+            </form>
+        </div>
+        <div class="sec-title centred hidden" id="top_sales">
+
+            <p>Steezz Daily Transaction - <span id="history_daily"></span></p>
+            <h2>Grand Total: <span id="grand_total"></span></h2>
+            <img src="/assets/images/icons/icon-1.png" alt="">
+        </div>
+        <div class="pricing-inner centred hidden" id="display_sales">
+            <h2 id="loading"><span>Loading... Daily Transaction</span> </h2>
+            <div class="row clearfix" id="week_1">
+                <div class='col-lg-3 col-md-6 col-sm-12 pricing-block' id="loading">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- contact-style-two -->
+<!-- contact-style-two end -->
+<div id="daily_transaction_history"></div>
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+<script type="text/javascript" src="/assets/st24js/AdminScript.js"></script>
+
+<script type="text/javascript">
+    if (localStorage.getItem("login_id") == null) {
+        location.href = "/";
+    }
+
+    var getDailySales = () => {
+
+        var month_number = $("#daily_sales").val();
+
+        location.href = "/agent/dailysalesdetails?day=" + month_number + " &id=" + localStorage.getItem("login_id");
+         
+    }
+</script>
+

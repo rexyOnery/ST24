@@ -1,0 +1,99 @@
+﻿@page
+@model ST24.Pages.PricingModel
+@{
+    ViewData["Title"] = "Pricing";
+}
+
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>Our Pricing</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/">Home</a></li>
+                <li>Our Pricing</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+<!-- pricing-section -->
+<section class="pricing-section">
+    <div class="map-layer" style="background-image: url(/assets/images/shape/map-1.png);"></div>
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>Best Pricing Plans</p>
+            <h2>Affordable Prices</h2>
+            <img src="/assets/images/icons/icon-1.png" alt="">
+        </div>
+        <div class="pricing-inner centred">
+            <div class="row clearfix" id="pricing">  
+                <h2>Loading... Price List</h2>
+            </div>
+        </div>
+        <div class="cta-section bg-color-2">
+            <div class="inner-box clearfix">
+                <div class="pattern-layer" style="background-image: url(/assets/images/shape/shape-2.png);"></div>
+                <div class="text pull-left">
+                    <h2>Book Our Laundry Services <br />& Get <span>30%</span> Discount</h2>
+                </div>
+                <div class="btn-box pull-right">
+                    <a href="/placeorder" class="theme-btn">Order service now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- pricing-section end -->
+<!-- faq-section -->
+<section class="faq-section bg-color-3">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-6 col-md-12 col-sm-12 title-column">
+                <div class="title-inner">
+                    <div class="sec-title">
+                        <p>Question Answers</p>
+                        <h2>Frequently Asked Questions</h2>
+                        <img src="/assets/images/icons/icon-1.png" alt="">
+                    </div>
+                    <figure class="image-box"><img src="/assets/images/resource/faq-1.jpg" alt=""></figure>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 accordian-column">
+                <ul class="accordion-box">
+                    <li class="accordion block">
+                        <div class="acc-btn">
+                            <div class="icon-outer"><i class="fas fa-plus"></i></div>
+                            <h5>How to order for dry cleaning service</h5>
+                        </div>
+                        <div class="acc-content">
+                            <p>You can order for your dry cleaning services by reaching out to our various physical pick-up locations or by <a href="/placeorder">placing order request(s)</a> directly on our website and our designated agent will locate you</p>
+                        </div>
+                    </li>
+                    <li class="accordion block active-block">
+                        <div class="acc-btn active">
+                            <div class="icon-outer"><i class="fas fa-plus"></i></div>
+                            <h5>What are your charges like?</h5>
+                        </div>
+                        <div class="acc-content current">
+                            <p>We are temperate with our prices when you put into consideration the amount of services we render to give you the best of cleaning </p>
+                        </div>
+                    </li>
+                    <li class="accordion block">
+                        <div class="acc-btn">
+                            <div class="icon-outer"><i class="fas fa-plus"></i></div>
+                            <h5>How to contact with our laundry experts</h5>
+                        </div>
+                        <div class="acc-content">
+                            <p>You can contact us via the <a href="/contact">contact us page</a> or by reaching out on our mobile line '+234(0)808 816 0309'</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- faq-section end -->
+<script type="text/javascript" src="~/assets/st24js/ServiceScript.js"></script>

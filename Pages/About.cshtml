@@ -1,0 +1,210 @@
+﻿@page
+@model ST24.Pages.AboutModel
+@{
+    ViewData["Title"] = "About";
+}
+
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>About Us</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/">Home</a></li>
+                <li>About Us</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+<!-- about-style-three -->
+<section class="about-style-three">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                <div class="image_block_3">
+                    <div class="image-box">
+                        <div class="top-content">
+                            <div class="icon-box"><i class="flaticon-laundry-1"></i></div>
+                            <h4>Founded in 2012</h4>
+                        </div>
+                        <figure class="image"><img src="/assets/images/resource/about-4.jpg" alt=""></figure>
+                        <div class="bottom-content">
+                            <h4>We have @(DateTime.Now.Year-2012)+ years of experiences</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                <div class="content_block_6">
+                    <div class="content-box">
+                        <div class="sec-title">
+                            <p>Learn More About Us</p>
+                            <h2>Get to Know More About Steezz Laundry</h2>
+                            <img src="/assets/images/icons/icon-1.png" alt="">
+                        </div>
+                        <div class="text">
+                            <p>Steezz Laundry was launched about @(DateTime.Now.Year-2012) years ago. We have spreads of collection point and home service pickup/delivery at most locations of the FCT</p>
+                        </div>
+                        <div class="inner-box clearfix">
+                            <div class="left-column pull-left">
+                                <div class="icon-box"><i class="flaticon-laundry"></i></div>
+                                <p>We carry-out round the clock service to ensure that our customers' satisfaction is guaranteed and expectations always met.</p>
+                            </div>
+                            <div class="right-column pull-left">
+                                <div class="single-item">
+                                    <div class="icon-box"><i class="fas fa-check-circle"></i></div>
+                                    <h5>We’re Professional</h5>
+                                    <p>We have years of experience under our belt.</p>
+                                </div>
+                                <div class="single-item">
+                                    <div class="icon-box"><i class="fas fa-check-circle"></i></div>
+                                    <h5>Quality Cleaning</h5>
+                                    <p>By application of appropriate solvent/detergent.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="support-box"><h3><a href="tel:+2348167877465">0816 787 7465</a><span>Call Us Anytime For Orders</span></h3></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- about-style-three end -->
+<!-- team-section -->
+<section class="team-section sec-pad">
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>Professional People</p>
+            <h2>Meet Our Team</h2>
+            <img src="/assets/images/icons/icon-1.png" alt="">
+        </div>
+        <div class="row clearfix" id="get_about_agent">
+            
+        </div>
+    </div>
+</section>
+<!-- team-section end -->
+<!-- testimonial-section -->
+<section class="testimonial-section bg-color-1 sec-pad">
+    <div class="pattern-layer" style="background-image: url(/assets/images/shape/shape-4.png);"></div>
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-5 col-md-12 col-sm-12 title-column">
+                <div class="title-inner">
+                    <div class="sec-title light">
+                        <p>Testimonials</p>
+                        <h2>What They Are Talking</h2>
+                        <img src="/assets/images/icons/icon-2.png" alt="">
+                    </div>
+                    <div class="customer-box">
+                        <div class="icon-box"><i class="flaticon-ratings"></i></div>
+                        <h2>777+</h2>
+                        <h4>Customers are satisfied</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12 col-sm-12 inner-column">
+                <div class="testimonial-inner">
+                    <div class="testimonial-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
+                        <div class="testimonial-block-one">
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="/assets/images/resource/testimonial-1.png" alt=""></figure>
+                                <h3>I was very impresed by Steezz24 Laundry Services. The fact that i got my clothes delivered to me despite the short notice given them makes them my No. 1 go to for my laoundry services</h3>
+                                <h4>Jide  /  <span>Customer</span></h4>
+                                <div class="quote-box"><i class="flaticon-right-quote"></i></div>
+                            </div>
+                        </div>
+                        <div class="testimonial-block-one">
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="/assets/images/resource/testimonial-2.png" alt=""></figure>
+                                <h3>I was stuck between doing my laundry and house chores when i got wind of Steezz24 Laundry. My saturday work-load has greatly reduced and i now have more time playing with my kids.</h3>
+                                <h4>Helen  /  <span>Customer</span></h4>
+                                <div class="quote-box"><i class="flaticon-right-quote"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- testimonial-section end -->
+<!-- video-section -->
+<section class="video-section centred" style="background-image: url(/assets/images/background/video-1.jpg);">
+    <div class="auto-container">
+        <div class="inner-box">
+            @*<div class="video-btn">
+                <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image video-btn" data-caption="">
+                    <i class="fas fa-play"></i>
+                    <span class="border-animation border-1"></span>
+                    <span class="border-animation border-2"></span>
+                    <span class="border-animation border-3"></span>
+                </a>
+            </div>*@
+            <h2>Delivering Clean Clothes <br />and Peace of Mind</h2>
+        </div>
+    </div>
+</section>
+<!-- video-section -->
+<!-- process-section -->
+<section class="process-section sec-pad centred">
+    <div class="map-layer" style="background-image: url(/assets/images/shape/map-1.png);"></div>
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>How We Works</p>
+            <h2>Follow 4 Easy Steps</h2>
+            <img src="/assets/images/icons/icon-1.png" alt="">
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-3 col-md-6 col-sm-12 process-block">
+                <div class="process-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <div class="arrow" style="background-image: url(/assets/images/icons/arrow-1.png);"></div>
+                        <div class="icon-box"><i class="flaticon-calendar"></i></div>
+                        <h4>Choose Pickup Time</h4>
+                        <p>We pick up dirty clothes at appointed time.</p>
+                        <span>Step 01</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 process-block">
+                <div class="process-block-one wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <div class="arrow" style="background-image: url(/assets/images/icons/arrow-1.png);"></div>
+                        <div class="icon-box"><i class="flaticon-washing-machine-1"></i></div>
+                        <h4>Collect Dirty Clothes</h4>
+                        <p>This can be done from any location. Home or Office</p>
+                        <span>Step 02</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 process-block">
+                <div class="process-block-one wow fadeInUp animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <div class="arrow" style="background-image: url(/assets/images/icons/arrow-1.png);"></div>
+                        <div class="icon-box"><i class="flaticon-rinse"></i></div>
+                        <h4>We’ll Clean & Dry</h4>
+                        <p>We carry-out the dry cleaning process.</p>
+                        <span>Step 03</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 process-block">
+                <div class="process-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <div class="icon-box"><i class="flaticon-delivery"></i></div>
+                        <h4>Deliver to Doorstep</h4>
+                        <p>We deliver cleaned clothes to your location.</p>
+                        <span>Step 04</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- process-section end --> 
+<script type="text/javascript" src="~/assets/st24js/AdminScript.js"></script>

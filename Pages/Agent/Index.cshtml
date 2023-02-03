@@ -1,0 +1,98 @@
+﻿@page
+@model ST24.Pages.Agent.IndexModel
+@{
+    ViewData["Title"] = "Account Login";
+}
+
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>Agent</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/Agent/dashboard">Home</a></li>
+                <li>New Customer</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+<!-- contact-style-two -->
+<section class="contact-style-two">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-8 col-md-12 col-sm-12 form-column">
+                <div class="content_block_6">
+                    <div class="content-box">
+                        <div class="sec-title">
+                            <p>Agent</p>
+                            <h2>Add New Customer</h2>
+                            <img src="/assets/images/icons/icon-1.png" alt="">
+                        </div>
+                        <form method="post" id="create-account-form" class="default-form" novalidate="novalidate">
+                            <div class="row clearfix">
+                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="text" name="name" id="name" placeholder="Customer Name" required="" aria-required="true">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                    <input type="text" name="phone"  onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" maxlength="11"  id="phone" placeholder="Customer Phone" required="" aria-required="true">
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                    <input type="text" name="address" id="address" placeholder="Customer House Address" required="" aria-required="true">
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
+                                    <img src="/assets/images/gifs/loader_1.gif" id="action_loading" class="hidden" height="280" width="260" />
+                                    <button class="theme-btn style-one" type="button" id="btn_new_customer" name="btn_new_customer">Add Customer</button>
+                                    <span class="error-image error-section" id="error-message">
+
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                <div class="blog-sidebar">
+                    <div class="sidebar-widget category-widget">
+                        <div class="widget-title">
+                            <h4>Links</h4>
+                        </div>
+                        <div class="widget-content">
+                            <ul class="category-list clearfix">
+                                <li><a href="/agent/dashboard">Dashboard</a></li>
+                                <li><a href="/agent">Add New/Search Customer</a></li>
+                                <li><a href="/agent/customers">View Customers</a></li>
+                                <li><a href="/agent/awaiting-delivery">Awaiting Delivery</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- contact-style-two end -->
+
+<style type="text/css">
+    .text-error {
+        color: red;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+
+<script type="text/javascript" src="/assets/st24js/AgentScript.js"></script>
+
+<script type="text/javascript">
+    if (localStorage.getItem("login_id") == null) {
+        location.href = "/";
+    }
+</script>

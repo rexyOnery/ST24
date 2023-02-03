@@ -1,0 +1,223 @@
+﻿@page
+@model ST24.Pages.Agent.Customer_ItemsModel
+@{
+    ViewData["Title"] = "Cart List";
+}
+<!-- Page Title -->
+
+<section class="page-title" style="background-image: url(/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>Cart List</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/agent/dashboard">Home</a></li>
+                <li>Cart</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+<!-- news-section -->
+<section class="news-section sec-pad">
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p id="customerName"></p>
+            <h2>List of Item(s) in Cart</h2>
+            <img src="/assets/images/icons/icon-1.png" alt="">
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-8 col-md-6 col-sm-12 news-block">
+                <div id="payment-failed">
+                    Uh-oh. Please try again, or contact support if you're encountering difficulties making payment.
+                </div>
+                <form>
+
+                    <div id="shopping_cart"></div>
+                    <div class="auto-container hidden" id="pay-now-button">
+                        <div class="inner-box clearfix">
+                            <div class="text pull-left">
+                                <div>Request Date: <span id="p_date"></span></div>
+                                <div style="margin-top:-20px">Phone: <span id="p_phone"></span></div>
+                                <div style="margin-top:-20px">Address: <span id="p_address"></span></div>
+                            </div>
+                            <div class="text pull-right">
+                                <h4>Total Due: &#8358;<span id="grand_total">0.00</span></h4>
+                                <h4>Discount: <span id="percent_off">0</span>%</h4>
+                                <h4>Express Charge: &#8358;<span id="express_charge">0.00</span></h4>
+                                <h4>Grand Total Due: &#8358;<span id="grand_total_due">0.00</span></h4>
+                            </div>
+                        </div>
+                        <div class="inner-box pull-right">
+                            <div class="btn-box hidden" id="pay_prg">
+                                <img src="~/assets/images/gifs/loader_1.gif" height="300" width="280" />
+                            </div>
+                            <div class="btn-box" id="pay_box">
+                                <a href="javascript:update_Offline_Payment_on_Page('Offline Payment');" class="theme-btn style-two google-play">
+                                    <i class="fas fa-money-bill"></i>
+                                    <span>Pay now</span>
+                                    <h5>Offline Payment</h5>
+                                </a>
+                                <a href="javascript:late_online_payment();" class="theme-btn style-one app-store">
+                                    <i class="fab fa-money-bill"></i>
+                                    <span>Pay now</span>
+                                    <h5>Online Payment</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="auto-container hidden" id="paid-button">
+                        <div class="inner-box clearfix">
+                            <div class="text pull-left">
+                                <div>Request Date: <span id="date"></span></div>
+                                <div style="margin-top:-20px">Phone: <span id="phone"></span></div>
+                                <div style="margin-top:-20px">Address: <span id="address"></span></div>
+                            </div>
+                            <div class="text pull-right">
+                                <h2><i class="fas fa-check-double"></i>PAID: &#8358;<span id="grand_total_paid">0.00</span></h2>
+                            </div>
+                            <div class="inner-box pull-right">
+                                <div class="btn-box hidden" id="collect_prg">
+                                    <img src="~/assets/images/gifs/loader_1.gif" height="300" width="280" />
+                                </div>
+                                <div class="btn-box" id="collect_box">
+                                    <a href="javascript:mark_collected();" class="theme-btn style-two google-play">
+                                        <i class="fas fa-check-double"></i>
+                                        <span>collect item</span>
+                                        <h5>Mark As Collected</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        @*<a href="javascript:printPage();" style="width:100%; margin-top:5px" class="theme-btn btn-success"><i class="fas fa-2x fa-print"></i> Print Receipt</a>*@
+                    </div>
+
+                </form>
+                <div id="payment-success">
+                    Thank you! Enjoy your awesome cruise.🚢
+                </div>
+                <div id="payment-pending">
+                    Verifying...Setting up your cruise🚢
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 sidebar-side">
+                <div class="blog-sidebar">
+                    <div class="sidebar-widget category-widget">
+                        <div class="widget-title">
+                            <h4>Links</h4>
+                        </div>
+                        <div class="widget-content">
+                            <ul class="category-list clearfix">
+                                <li><a href="/agent/dashboard">Dashboard</a></li>
+                                <li><a href="/agent">Add New/Search Customer</a></li>
+                                <li><a href="/agent/customers">View Customers</a></li>
+                                <li><a href="/agent/awaiting-delivery">Awaiting Delivery</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<div id="dvContents" class="hidden">
+    <div class="col-lg-4 col-md-12 col-sm-12 info-column">
+        <div class="info-inner">
+            <div class='lower-content'>
+                <img src="/assets/images/logo.svg" />
+            </div>
+            <hr />
+            <div style='font-size:xx-large' id="print_name"></div>
+            <div style='font-size:xx-large' id="print_phone"></div>
+            <div style='font-size:xx-large' id="print_address"></div>
+            <div style="font-size:xx-large" id="print_date"></div>
+            <hr />
+            <div class='lower-content'>
+                <span style='font-size:xx-large'>ITEMS</span>  <span style='font-size:xx-large' class='pull-right' href='#'>PRICE</span>
+            </div>
+            <hr />
+            <div id="printBody"></div>
+            <hr />
+            <div class='lower-content'>
+                <span style='font-size:xx-large'>TOTAL</span>  <span id="print_total" style='font-size:xx-large' class='pull-right' href='#'></span>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- news-section end -->
+<div id="display_my_cart_items"></div>
+
+<style type="text/css">
+    .hidden {
+        display: none;
+    }
+
+    #payment-success {
+        display: none;
+    }
+
+    #payment-pending {
+        display: none;
+    }
+
+    #payment-failed {
+        display: none;
+    }
+
+    #payment-button {
+        display: none;
+    }
+</style>
+<script type="text/javascript" src="/assets/st24js/AgentScript.js"></script>
+<script type="text/javascript" src="/assets/st24js/CartScript.js"></script>
+@*<script src="https://checkout.flutterwave.com/v3.js"></script>*@
+<script src="https://js.paystack.co/v2/inline.js"></script>
+
+<script type="text/javascript">
+    if (localStorage.getItem("login_id") == null) {
+        location.href = "/";
+    }
+
+
+    var update_Offline_Payment_on_Page = (mode) => {
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var customer_id = location.search.split('=')[1];
+
+        var raw = JSON.stringify({
+            "paymode": mode
+        });
+
+        var requestOptions = {
+            method: 'PUT',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        $("#pay_prg").removeClass('hidden');
+        $("#pay_box").addClass('hidden');
+
+        fetch("http://services.steezz24.com/customeragents/update-payment/" + customer_id, requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                console.log(result);
+                //localStorage.removeItem("CartItems");
+                location.href = "/agent/customer-items/?custid=" + customer_id
+            })
+            .catch(error => {
+                console.log(error);
+                $("#pay_prg").addClass('hidden');
+                $("#pay_box").removeClass('hidden');
+            });
+    }
+
+</script>
+

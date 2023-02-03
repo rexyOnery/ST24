@@ -1,0 +1,133 @@
+﻿@page
+@model ST24.Pages.MiniAdmin.DashboardModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>Dashboard</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li>Dashboard</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+<!-- chooseus-section -->
+<section class="chooseus-section bg-color-3">
+    <div class="pattern-layer" style="background-image: url(/assets/images/shape/shape-3.png);"></div>
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-6 col-md-12 col-sm-12 left-column">
+                <div class="content_block_2">
+                    <div class="content-box">
+                        <div class="sec-title">
+                            <h2>Laundry </h2>
+                            <img src="/assets/images/icons/icon-1.png" alt="">
+                        </div>
+                        <div class="inner-box clearfix">
+                            <figure class="star-icon"><img src="/assets/images/icons/star-1.png" alt=""></figure>
+                            <div class="single-item">
+                                <a href="/miniadmin/agents">
+                                    <div class="inner">
+                                        <div class="icon-box"><i class="fa fa-users"></i></div>
+                                        <h4>View <br />Agents</h4>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="single-item">
+                                <a href="/miniadmin/collections">
+                                    <div class="inner">
+                                        <div class="icon-box"><i class="fa fa-shopping-basket"></i></div>
+                                        <h4>View Collections</h4>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="single-item">
+                                <a href="/miniadmin/addcollections">
+                                    <div class="inner">
+                                        <div class="icon-box"><i class="fa fa-plus"></i></div>
+                                        <h4>Add Collections</h4>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="single-item">
+                                <a href="/miniadmin/awaitingdelivery">
+                                    <div class="inner">
+                                        <div class="icon-box"><i class="flaticon-laundry-1"></i></div>
+                                        <h4><span id="awaiting_delivery_count"></span> Awaiting Delivery</h4>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 left-column">
+                <div class="content_block_2">
+                    <div class="content-box">
+                        <div class="sec-title">
+                            <h2>Dashboard</h2>
+                            <img src="/assets/images/icons/icon-1.png" alt="">
+                        </div>
+                        <div class="inner-box clearfix">
+                            <figure class="star-icon"><img src="/assets/images/icons/star-1.png" alt=""></figure>
+
+                           
+                            <div class="single-item">
+                                <a href="/miniadmin/transactionhistory">
+                                    <div class="inner">
+                                        <div class="icon-box"><i class="flaticon-calendar"></i></div>
+                                        <h4>Transaction History</h4>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="single-item">
+                                <a href="/Admin/dailysales">
+                                    <div class="inner">
+                                        <div class="icon-box"><i class="fa fa-piggy-bank"></i></div>
+                                        <h4>View <br />Daily Sales</h4>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             
+
+        </div>
+    </div>
+</section>
+<!-- cta-section -->
+<section class="cta-section bg-color-2 alternat-2">
+    <div class="pattern-layer" style="background-image: url(/assets/images/shape/shape-7.png);"></div>
+    <div class="auto-container">
+        <div class="inner-box clearfix">
+            <div class="text pull-left">
+                <h2>Gallery Section</h2>
+            </div>
+            <div class="btn-box pull-right">
+                <a href="/admin/gallpix" class="theme-btn">Add Gallery</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- cta-section end -->
+<!-- chooseus-section end -->
+<!-- process-section end -->
+<div id="admin_dash"></div>
+<script type="text/javascript" src="/assets/st24js/AdminScript.js"></script>
+
+<script type="text/javascript">
+    if (localStorage.getItem("login_id") == null) {
+        //location.href = "/";
+    }
+</script>

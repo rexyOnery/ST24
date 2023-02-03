@@ -1,0 +1,38 @@
+﻿@page
+@model ST24.Pages.GalleryModel
+@{
+    ViewData["Title"] = "Gallery";
+}
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>Our Gallery</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/">Home</a></li>
+                <li>Our Gallery</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+<!-- gallery-page-section -->
+<section class="gallery-page-section">
+    <div class="auto-container">
+        <div class="row clearfix" id="gal_section">
+            <div class="sec-title centred">
+                <h2><span>Loading...</span></h2>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- gallery-page-section end -->
+
+
+<script type="text/javascript" src="/assets/st24js/galleryScript.js"></script>
+<script type="text/javascript">
+    getGallery();
+</script>
+

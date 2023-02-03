@@ -1,0 +1,149 @@
+﻿@page
+@model ST24.Pages.Agent.CartModel
+@{
+    ViewData["Title"] = "Cart";
+}
+
+
+<!-- Page Title -->
+<section class="page-title" style="background-image: url(/assets/images/background/page-title.jpg);">
+    <div class="auto-container">
+        <div class="content-box">
+            <div class="title">
+                <h1>Cart</h1>
+            </div>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/agent/dashboard">Home</a></li>
+                <li>Cart</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+<!-- news-section -->
+<section class="news-section sec-pad">
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>From the Cart</p>
+            <h2>List of Item(s) in Cart</h2>
+            <img src="/assets/images/icons/icon-1.png" alt="">
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-8 col-md-6 col-sm-12 news-block">
+                <div id="payment-failed">
+                    Uh-oh. Please try again, or contact support if you're encountering difficulties making payment.
+                </div>
+                <form>
+
+                    <div id="shopping_cart">
+                        <div class="sec-title centred">
+                            <h2><span>Loading...</span></h2>
+                        </div>
+                    </div>
+                    <div class="auto-container pull-right">
+                        <div class="inner-box clearfix">
+                            <div class="text pull-right">
+                                <h2>Total: &#8358;<span id="grand_total">0.00</span></h2>
+                            </div>
+                            <input type="hidden" id="reset_total" value="" />
+                        </div>
+                        <div class="inner-box pull-right">
+                            <div class="btn-box">
+                                <a href="javascript:apply_discount(5);" style="margin-top:5px" class="theme-btn btn-dark w-auto">Apply 5% Discount </a>
+                                <a href="javascript:apply_discount(7);" style="margin-top:5px" class="theme-btn btn-dark w-auto">Apply 7% Discount </a>
+                                <a href="javascript:apply_discount(10);" style="margin-top:5px" class="theme-btn btn-dark w-auto">Apply 10% Discount </a>
+                                <input type="text" id="express_price" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" class="form-control mt-2 mb-2 p-5" style="font-size:xx-large" placeholder="Express Charge" />
+                                <a href="javascript:calculate_express();" style="margin-top:5px" class="theme-btn mb-2 btn-success w-100">Add Express Charge</a>
+                                <div class="text mb-lg-5">
+
+                                    <h2>
+                                        <a href="javascript:calculate_reset();" style="width:30%; margin-top:5px" class="theme-btn mb-2 btn-info">Reset Price</a>
+                                        Total Due: &#8358;<span id="grand_total_due">0.00</span>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inner-box pull-right" id="btns_controller">
+                            <div class="btn-box">
+                                <a href="javascript:Offline_payment();" class="theme-btn style-two google-play">
+                                    <i class="fas fa-money-bill"></i>
+                                    <span>Pay now</span>
+                                    <h5>Offline Payment</h5>
+                                </a>
+                                <a href="javascript:make_payment();" class="theme-btn style-one app-store">
+                                    <i class="fab fa-money-bill"></i>
+                                    <span>Pay now</span>
+                                    <h5>Online Payment</h5>
+                                </a>
+                            </div>
+                            <a href="javascript:btn_pay_later();" style="width:100%; margin-top:5px" class="theme-btn btn-danger">Pay Later <i class="fa fa-check"></i></a>
+                        </div>
+                        <div class="inner-box pull-right hidden" id="btns_loader">
+                            <div class="btn-box">
+                                <img src="~/assets/images/gifs/loader_1.gif" />
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+                <div id="payment-success">
+                    Thank you! Enjoy your awesome cruise.🚢
+                </div>
+                <div id="payment-pending">
+                    Verifying...Setting up your cruise🚢
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 sidebar-side">
+                <div class="blog-sidebar">
+                    <div class="sidebar-widget category-widget">
+                        <div class="widget-title">
+                            <h4>Links</h4>
+                        </div>
+                        <div class="widget-content">
+                            <ul class="category-list clearfix">
+                                <li><a href="/agent/dashboard">Dashboard</a></li>
+                                <li><a href="/agent">Add New/Search Customer</a></li>
+                                <li><a href="/agent/customers">View Customers</a></li>
+                                <li><a href="/agent/awaiting-delivery">Awaiting Delivery</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- news-section end -->
+<div id="display_cart_items"></div>
+
+<style type="text/css">
+    .hidden {
+        display: none;
+    }
+
+    #payment-success {
+        display: none;
+    }
+
+    #payment-pending {
+        display: none;
+    }
+
+    #payment-failed {
+        display: none;
+    }
+</style>
+<script type="text/javascript" src="/assets/st24js/AgentScript.js"></script>
+<script type="text/javascript" src="/assets/st24js/CartScript.js"></script>
+@*<script src="https://checkout.flutterwave.com/v3.js"></script>*@
+<script src="https://js.paystack.co/v2/inline.js"></script>
+
+<script type="text/javascript">
+    if (localStorage.getItem("login_id") == null) {
+        //location.href = "/";
+    }
+</script>
+
